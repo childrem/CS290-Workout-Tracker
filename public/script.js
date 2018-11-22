@@ -6,9 +6,8 @@ document.addEventListener('DOMContentLoaded', setupButton);
 
 function setupButton(){
 
-  document.getElementById('addExerciseButton').addEventListener("click", function(event){
+  document.getElementById('addExerciseButton').addEventListener("click", function(){
     submitButtonTest();
-    event.preventDefault();
   })
   
 }
