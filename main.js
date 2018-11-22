@@ -36,6 +36,8 @@ app.get('/', function(req, res, next){
   
   context.results = "You've loaded the correct page!";
   
+  console.log("GET Request Received By Server!");
+  
   res.render('home',context);
 });
 
