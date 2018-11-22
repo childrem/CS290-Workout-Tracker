@@ -26,5 +26,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     }
   });
   
+  req.send(null);
+  
   event.preventDefault();
 });
