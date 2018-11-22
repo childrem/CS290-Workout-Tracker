@@ -1,7 +1,9 @@
+
+/*
 function submitButtonTest(){
   console.log("The button submitted a GET Request");
 }
-
+*/
 console.log("In Javascript File");
 
 /*
