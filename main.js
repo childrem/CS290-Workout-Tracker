@@ -31,6 +31,14 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
+app.get('/', function(req, res, next){
+  var context = {};
+  
+  context.results = "You've loaded the correct page!";
+  
+  res.render('home',context);
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
