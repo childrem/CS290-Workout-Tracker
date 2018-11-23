@@ -1,16 +1,5 @@
 console.log("In Javascript File");
 
-/*
-document.addEventListener('DOMContentLoaded', setupButton);
-
-function setupButton(){
-
-  document.getElementById('addExerciseButton').addEventListener("click", function(){
-    console.log("Event Listener Worked!");
-  });
-  
-}
-*/
 
 /********************* GET REQUEST WORKS ON SUBMIT BUTTON ***************************
 
@@ -48,20 +37,15 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     dataToSend.lbs = document.getElementById('lbs').value;
     dataToSend.addExerciseButton = document.getElementById('addExerciseButton').value;
   
-  /*
-  var name = document.getElementById('name').value;
-  var reps = document.getElementById('reps').value;
-  var weight = document.getElementById('weight').value;
-  var date = document.getElementById('date').value;
-  var lbs = document.getElementById('lbs').value;
-  */
+  
   
   req.open("POST", "http://flip2.engr.oregonstate.edu:5840/", true);
   req.setRequestHeader('Content-Type', 'application/json');
   req.addEventListener("load", function(){
     if (req.status >= 200 && req.status < 400) {
       console.log("POST Request Worked");
-      console.log(req.responseText);
+      var newTable = req.responseText;
+      
     }
     
     else {
