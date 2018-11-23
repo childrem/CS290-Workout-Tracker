@@ -45,7 +45,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     if (req.status >= 200 && req.status < 400) {
       console.log("POST Request Worked");
       console.log(req.responseText);
-      var newData = req.responseText;
+      var newData = JSON.parse(req.responseText);
       
       // Construct a new table on the HTML page using returned data from database
       
