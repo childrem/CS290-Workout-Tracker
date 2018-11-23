@@ -56,6 +56,8 @@ app.post('/', function(req,res,next){
   
   console.log("POST Request Received By Server!");
   
+  
+  
   // Get updated table after a change in the table occurs
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if (err){
