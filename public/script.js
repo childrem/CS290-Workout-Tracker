@@ -101,6 +101,13 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
         weightCell.style.textAlign = "center";
         newRow.appendChild(weightCell);
         
+        var dateCell = document.createElement("td");
+        dateCell.textContent = newData[index].date;
+        dateCell.style.border = "solid";
+        dateCell.style.borderWidth = "1px";
+        dateCell.style.textAlign = "center";
+        newRow.appendChild(dateCell);
+        
         newTable.appendChild(newRow);
       }
       
