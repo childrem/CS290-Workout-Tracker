@@ -47,6 +47,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     lbs: document.getElementById('lbs').value,
     addExerciseButton: document.getElementById('addExerciseButton').value
   }
+  
   /*
   var name = document.getElementById('name').value;
   var reps = document.getElementById('reps').value;
@@ -67,7 +68,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     }
   });
   
-  req.send(dataToSend);
+  req.send(JSON.stringify(dataToSend));
   
   event.preventDefault();
 });
