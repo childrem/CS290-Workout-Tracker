@@ -62,7 +62,10 @@ app.post('/', function(req,res,next){
             next(err);
             return;
         }
+      
+    });
 
+      /*
         else {
             mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
                 if (err) {
@@ -77,7 +80,17 @@ app.post('/', function(req,res,next){
                 }
             });
         }
-    });  
+        */
+      mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
+                if (err) {
+                    next(err);
+                    return;
+                }
+      });  
+    
+    context.results = JSON.stringify(rows);
+
+    res.render('home', context);
   }
   
   else{
