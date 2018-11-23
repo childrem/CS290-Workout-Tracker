@@ -41,6 +41,16 @@ app.get('/', function(req, res, next){
   res.render('home',context);
 });
 
+app.post('/', function(req,res,next){
+  var context = {};
+  
+  context.results = "You've sent a POST request";
+  
+  console.log("POST Request Received By Server!");
+  
+  res.render('home',context);
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
