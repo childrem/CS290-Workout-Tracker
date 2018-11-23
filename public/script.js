@@ -45,6 +45,9 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     if (req.status >= 200 && req.status < 400) {
       console.log("POST Request Worked");
       console.log(req.responseText);
+      
+      //document.getElementById("tableToBeConstructed").removeChild(newTable);
+      
       var newData = JSON.parse(req.responseText);
       
       // Construct a new table on the HTML page using returned data from database
@@ -54,6 +57,43 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       newTable.style.borderWidth = "1px";
       
       var headRow = document.createElement("tr");
+      
+      var nameHeader = document.createElement("th");
+      nameHeader.textContent = "Exercise Name";
+      nameHeader.style.border = "solid";
+      nameHeader.style.borderWidth = "1px";
+      nameHeader.style.textAlign = "center";
+      headRow.appendChild(nameHeader);
+      
+      var repsHeader = document.createElement("th");
+      repsHeader.textContent = "Number of Reps";
+      repsHeader.style.border = "solid";
+      repsHeader.style.borderWidth = "1px";
+      repsHeader.style.textAlign = "center";
+      headRow.appendChild(repsHeader);
+      
+      var weightHeader = document.createElement("th");
+      weightHeader.textContent = "Weight Used";
+      weightHeader.style.border = "solid";
+      weightHeader.style.borderWidth = "1px";
+      weightHeader.style.textAlign = "center";
+      headRow.appendChild(weightHeader);
+      
+      var dateHeader = document.createElement("th");
+      dateHeader.textContent = "Date Performed";
+      dateHeader.style.border = "solid";
+      dateHeader.style.borderWidth = "1px";
+      dateHeader.style.textAlign = "center";
+      headRow.appendChild(dateHeader);
+      
+      var lbsHeader = document.createElement("th");
+      lbsHeader.textContent = "Lbs";
+      lbsHeader.style.border = "solid";
+      lbsHeader.style.borderWidth = "1px";
+      lbsHeader.style.textAlign = "center";
+      headRow.appendChild(lbsHeader);
+      
+      /*
       for(let i = 1; i <= 5; i++){
         var newCell = document.createElement("th");
         newCell.id = "headerCell" + i;
@@ -62,7 +102,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
         newCell.style.textAlign = "center";
         headRow.appendChild(newCell);
       }
-      
+      */
       
       newTable.appendChild(headRow);
       
@@ -122,12 +162,14 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       
       document.getElementById("tableToBeConstructed").appendChild(newTable);
       
+      /*
       // Set text content of header row
       document.getElementById("headerCell1").textContent = "Exercise Name";
       document.getElementById("headerCell2").textContent = "Number of Reps";
       document.getElementById("headerCell3").textContent = "Weight Used";
       document.getElementById("headerCell4").textContent = "Date Performed";
       document.getElementById("headerCell5").textContent = "Lbs";
+      */
       
     }
     
