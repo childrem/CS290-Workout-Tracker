@@ -69,6 +69,10 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       // Set text content of the header row
       
       document.getElementById("headerCell1").textContent = "Exercise Name";
+      document.getElementById("headerCell2").textContent = "Number of Reps";
+      document.getElementById("headerCell3").textContent = "Weight Used";
+      document.getElementById("headerCell4").textContent = "Date Performed";
+      document.getElementById("headerCell5").textContent = "Lbs";
     }
     
     else {
