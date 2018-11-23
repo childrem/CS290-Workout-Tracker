@@ -63,9 +63,6 @@ app.post('/', function(req,res,next){
             return;
         }
       
-    });
-
-      /*
         else {
             mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
                 if (err) {
@@ -74,28 +71,18 @@ app.post('/', function(req,res,next){
                 }
 
                 else {
-                    context.results = JSON.stringify(rows);
+                  res.send(JSON.stringify(rows);
+                    //context.results = JSON.stringify(rows);
 
-                    res.render('home', context);
+                    //res.render('home', context);
                 }
             });
         }
-        */
-    /*
-      mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
-                if (err) {
-                    next(err);
-                    return;
-                }
-      });  
-    
-    context.results = JSON.stringify(rows);
-
-    res.render('home', context);
-    */
+        
+    });
   }
   
- 
+ /*
     // Get updated table after a change in the table occurs
     mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
       if (err){
@@ -107,6 +94,8 @@ app.post('/', function(req,res,next){
   
     res.render('home',context);
     });
+    */
+   
 });
 
 app.use(function(req,res){
