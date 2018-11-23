@@ -62,10 +62,13 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
         headRow.appendChild(newCell);
       }
       
-      document.getElementById("headerCell1").textContent = "Exercise Name";
       
       newTable.appendChild(headRow);
       document.getElementById("tableToBeConstructed").appendChild(newTable);
+      
+      // Set text content of the header row
+      
+      document.getElementById("headerCell1").textContent = "Exercise Name";
     }
     
     else {
