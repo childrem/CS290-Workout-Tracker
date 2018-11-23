@@ -40,14 +40,13 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   var req = new XMLHttpRequest();
   // Get all of the user input information
   
-  var dataToSend = {
-    name: document.getElementById('name').value,
-    reps: document.getElementById('reps').value,
-    weight: document.getElementById('weight').value,
-    date: document.getElementById('date').value,
-    lbs: document.getElementById('lbs').value,
-    addExerciseButton: document.getElementById('addExerciseButton').value
-  };
+  var dataToSend = {};
+    dataToSend.name = document.getElementById('name').value;
+    dataToSend.reps = document.getElementById('reps').value;
+    dataToSend.weight = document.getElementById('weight').value;
+    dataToSend.date = document.getElementById('date').value;
+    dataToSend.lbs = document.getElementById('lbs').value;
+    dataToSend.addExerciseButton = document.getElementById('addExerciseButton').value;
   
   /*
   var name = document.getElementById('name').value;
@@ -58,6 +57,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   */
   
   req.open("POST", "http://flip2.engr.oregonstate.edu:5840/", true);
+  req.setRequestHeader('Content-Type', 'application/json');
   req.addEventListener("load", function(){
     if (req.status >= 200 && req.status < 400) {
       console.log("POST Request Worked");
