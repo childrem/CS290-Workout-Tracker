@@ -68,7 +68,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     }
   });
   
-  req.send({"test":"This is a test value!"});
+  req.send('{"test":"This is a test value!"}');
   
   event.preventDefault();
 });
