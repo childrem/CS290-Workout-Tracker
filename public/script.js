@@ -50,9 +50,16 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       
       var newData = JSON.parse(req.responseText);
       
+      // Get rid of previous table if present
+      
+      if(document.getElementById("dataTable")){
+        document.getElementById("tableToBeConstructed").removeChild(document.getElementById("dataTable"));
+      }
+      
       // Construct a new table on the HTML page using returned data from database
       
       var newTable = document.createElement("table");
+      newTable.id = "dataTable";
       newTable.style.border = "solid";
       newTable.style.borderWidth = "1px";
       
