@@ -62,6 +62,8 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
         headRow.appendChild(newCell);
       }
       
+      document.getElementById("headerCell1").textContent = "Exercise Name";
+      
       newTable.appendChild(headRow);
       document.getElementById("tableToBeConstructed").appendChild(newTable);
     }
