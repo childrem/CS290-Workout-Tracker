@@ -39,6 +39,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   console.log("POST Event Listener Simple Method Worked!");
   var req = new XMLHttpRequest();
   // Get all of the user input information
+  
   var dataToSend = {
     name: document.getElementById('name').value,
     reps: document.getElementById('reps').value,
@@ -54,7 +55,6 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   var weight = document.getElementById('weight').value;
   var date = document.getElementById('date').value;
   var lbs = document.getElementById('lbs').value;
-  
   */
   
   req.open("POST", "http://flip2.engr.oregonstate.edu:5840/", true);
