@@ -81,6 +81,7 @@ app.post('/', function(req,res,next){
             });
         }
         */
+    /*
       mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
                 if (err) {
                     next(err);
@@ -91,9 +92,10 @@ app.post('/', function(req,res,next){
     context.results = JSON.stringify(rows);
 
     res.render('home', context);
+    */
   }
   
-  else{
+ 
     // Get updated table after a change in the table occurs
     mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
       if (err){
@@ -105,7 +107,6 @@ app.post('/', function(req,res,next){
   
     res.render('home',context);
     });
-  } 
 });
 
 app.use(function(req,res){
