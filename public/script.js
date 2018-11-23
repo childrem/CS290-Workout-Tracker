@@ -73,6 +73,18 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       document.getElementById("headerCell3").textContent = "Weight Used";
       document.getElementById("headerCell4").textContent = "Date Performed";
       document.getElementById("headerCell5").textContent = "Lbs";
+      
+      
+      // Now populate the table with the results returned from the database
+      for(var index = 0; index < newData.length; index++){
+        var newRow = document.createElement("tr");
+        var nameCell = document.createElement("td");
+        nameCell.textContent = newData[index].name;
+        newRow.appendChild(nameCell);
+        
+        newTable.appendChild(newRow);
+      }
+      
     }
     
     else {
