@@ -43,8 +43,8 @@ app.get('/', function(req, res, next){
     }
     
     
-    res.render('home');
-    //res.send(JSON.stringify(rows));
+    //res.render('home');
+    res.send(JSON.stringify(rows));
     
   });
   
