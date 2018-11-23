@@ -34,9 +34,15 @@ app.get('/reset-table',function(req,res,next){
 app.get('/', function(req, res, next){
   var context = {};
   
-  context.results = "You've loaded the correct page!";
-  
   console.log("GET Request Received By Server!");
+  
+  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if (err){
+      next(err);
+      return;
+    }
+    
+    context.results = JSON.stringify(rows);
   
   res.render('home',context);
 });
