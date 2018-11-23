@@ -12,6 +12,8 @@ function setupButton(){
 }
 */
 
+/********************* GET REQUEST WORKS ON SUBMIT BUTTON ***************************
+
 document.getElementById('addExerciseButton').addEventListener("click", function(event){
   console.log("Event Listener Simple Method Worked!");
   var req = new XMLHttpRequest();
@@ -23,6 +25,27 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     
     else {
       console.log("Get Request Failed");
+    }
+  });
+  
+  req.send(null);
+  
+  event.preventDefault();
+});
+
+*/
+
+document.getElementById('addExerciseButton').addEventListener("click", function(event){
+  console.log("POST Event Listener Simple Method Worked!");
+  var req = new XMLHttpRequest();
+  req.open("POST", "http://flip2.engr.oregonstate.edu:5840/", true);
+  req.addEventListener("load", function(){
+    if (req.status >= 200 && req.status < 400) {
+      console.log("POST Request Worked");
+    }
+    
+    else {
+      console.log("POST Request Failed");
     }
   });
   
