@@ -1,5 +1,143 @@
 console.log("In Javascript File");
 
+function displayTable(newData){
+  if(document.getElementById("dataTable")){
+        document.getElementById("tableToBeConstructed").removeChild(document.getElementById("dataTable"));
+      }
+      
+      // Construct a new table on the HTML page using returned data from database
+      
+      var newTable = document.createElement("table");
+      newTable.id = "dataTable";
+      newTable.style.border = "solid";
+      newTable.style.borderWidth = "1px";
+      
+      var headRow = document.createElement("tr");
+      
+      var nameHeader = document.createElement("th");
+      nameHeader.textContent = "Exercise Name";
+      nameHeader.style.border = "solid";
+      nameHeader.style.borderWidth = "1px";
+      nameHeader.style.textAlign = "center";
+      headRow.appendChild(nameHeader);
+      
+      var repsHeader = document.createElement("th");
+      repsHeader.textContent = "Number of Reps";
+      repsHeader.style.border = "solid";
+      repsHeader.style.borderWidth = "1px";
+      repsHeader.style.textAlign = "center";
+      headRow.appendChild(repsHeader);
+      
+      var weightHeader = document.createElement("th");
+      weightHeader.textContent = "Weight Used";
+      weightHeader.style.border = "solid";
+      weightHeader.style.borderWidth = "1px";
+      weightHeader.style.textAlign = "center";
+      headRow.appendChild(weightHeader);
+      
+      var dateHeader = document.createElement("th");
+      dateHeader.textContent = "Date Performed";
+      dateHeader.style.border = "solid";
+      dateHeader.style.borderWidth = "1px";
+      dateHeader.style.textAlign = "center";
+      headRow.appendChild(dateHeader);
+      
+      var lbsHeader = document.createElement("th");
+      lbsHeader.textContent = "Lbs";
+      lbsHeader.style.border = "solid";
+      lbsHeader.style.borderWidth = "1px";
+      lbsHeader.style.textAlign = "center";
+      headRow.appendChild(lbsHeader);
+      
+      /*
+      for(let i = 1; i <= 5; i++){
+        var newCell = document.createElement("th");
+        newCell.id = "headerCell" + i;
+        newCell.style.border = "solid";
+        newCell.style.borderWidth = "1px";
+        newCell.style.textAlign = "center";
+        headRow.appendChild(newCell);
+      }
+      */
+      
+      newTable.appendChild(headRow);
+      
+      /*
+      //document.getElementById("tableToBeConstructed").appendChild(newTable);
+      
+      // Set text content of the header row
+      
+      document.getElementById("headerCell1").textContent = "Exercise Name";
+      document.getElementById("headerCell2").textContent = "Number of Reps";
+      document.getElementById("headerCell3").textContent = "Weight Used";
+      document.getElementById("headerCell4").textContent = "Date Performed";
+      document.getElementById("headerCell5").textContent = "Lbs";
+      */
+      
+      // Now populate the table with the results returned from the database
+      for(var index = 0; index < newData.length; index++){
+        var newRow = document.createElement("tr");
+        
+        var nameCell = document.createElement("td");
+        nameCell.textContent = newData[index].name;
+        nameCell.style.border = "solid";
+        nameCell.style.borderWidth = "1px";
+        nameCell.style.textAlign = "center";
+        newRow.appendChild(nameCell);
+        
+        var repsCell = document.createElement("td");
+        repsCell.textContent = newData[index].reps;
+        repsCell.style.border = "solid";
+        repsCell.style.borderWidth = "1px";
+        repsCell.style.textAlign = "center";
+        newRow.appendChild(repsCell);
+        
+        var weightCell = document.createElement("td");
+        weightCell.textContent = newData[index].weight;
+        weightCell.style.border = "solid";
+        weightCell.style.borderWidth = "1px";
+        weightCell.style.textAlign = "center";
+        newRow.appendChild(weightCell);
+        
+        var dateCell = document.createElement("td");
+        dateCell.textContent = newData[index].date;
+        dateCell.style.border = "solid";
+        dateCell.style.borderWidth = "1px";
+        dateCell.style.textAlign = "center";
+        newRow.appendChild(dateCell);
+        
+        var lbsCell = document.createElement("td");
+        lbsCell.textContent = newData[index].lbs;
+        lbsCell.style.border = "solid";
+        lbsCell.style.borderWidth = "1px";
+        lbsCell.style.textAlign = "center";
+        newRow.appendChild(lbsCell);
+        
+        newTable.appendChild(newRow);
+      }
+      
+      document.getElementById("tableToBeConstructed").appendChild(newTable);
+};
+
+document.addEventListener("DOMContentLoaded",function(){
+  var req = new XMLHttpRequest();
+  req.open("GET", "http://flip2.engr.oregonstate.edu:5840/", true);
+  req.addEventListener("load", function(){
+    if (req.status >= 200 && req.status < 400) {
+      console.log("GET Request Worked");
+      var dataTable = JSON.parse(req.responseText);
+      displayTable(dataTable);
+    }
+    
+    else {
+      console.log("Get Request Failed");
+    }
+  });
+  
+  req.send(null);
+  
+});
+
 
 /********************* GET REQUEST WORKS ON SUBMIT BUTTON ***************************
 
