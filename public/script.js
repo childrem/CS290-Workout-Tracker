@@ -81,6 +81,9 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
         var newRow = document.createElement("tr");
         var nameCell = document.createElement("td");
         nameCell.textContent = newData[index].name;
+        nameCell.style.border = "solid";
+        nameCell.style.borderWidth = "1px";
+        nameCell.style.textAlign = "center";
         newRow.appendChild(nameCell);
         
         newTable.appendChild(newRow);
