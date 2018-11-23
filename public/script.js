@@ -79,12 +79,20 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       // Now populate the table with the results returned from the database
       for(var index = 0; index < newData.length; index++){
         var newRow = document.createElement("tr");
+        
         var nameCell = document.createElement("td");
         nameCell.textContent = newData[index].name;
         nameCell.style.border = "solid";
         nameCell.style.borderWidth = "1px";
         nameCell.style.textAlign = "center";
         newRow.appendChild(nameCell);
+        
+        var repsCell = document.createElement("td");
+        repsCell.textContent = newData[index].reps;
+        repsCell.style.border = "solid";
+        repsCell.style.borderWidth = "1px";
+        repsCell.style.textAlign = "center";
+        newRow.appendChild(repsCell);
         
         newTable.appendChild(newRow);
       }
