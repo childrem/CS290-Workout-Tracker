@@ -65,7 +65,9 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       
       
       newTable.appendChild(headRow);
-      document.getElementById("tableToBeConstructed").appendChild(newTable);
+      
+      /*
+      //document.getElementById("tableToBeConstructed").appendChild(newTable);
       
       // Set text content of the header row
       
@@ -74,7 +76,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       document.getElementById("headerCell3").textContent = "Weight Used";
       document.getElementById("headerCell4").textContent = "Date Performed";
       document.getElementById("headerCell5").textContent = "Lbs";
-      
+      */
       
       // Now populate the table with the results returned from the database
       for(var index = 0; index < newData.length; index++){
@@ -117,6 +119,15 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
         
         newTable.appendChild(newRow);
       }
+      
+      document.getElementById("tableToBeConstructed").appendChild(newTable);
+      
+      // Set text content of header row
+      document.getElementById("headerCell1").textContent = "Exercise Name";
+      document.getElementById("headerCell2").textContent = "Number of Reps";
+      document.getElementById("headerCell3").textContent = "Weight Used";
+      document.getElementById("headerCell4").textContent = "Date Performed";
+      document.getElementById("headerCell5").textContent = "Lbs";
       
     }
     
