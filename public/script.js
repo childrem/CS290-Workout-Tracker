@@ -63,7 +63,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       }
       
       newTable.appendChild(headRow);
-      document.getElementById("").appendChild(newTable);
+      document.getElementById("tableToBeConstructed").appendChild(newTable);
     }
     
     else {
