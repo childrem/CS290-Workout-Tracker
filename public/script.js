@@ -44,7 +44,8 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
     reps: document.getElementById('reps').value,
     weight: document.getElementById('weight').value,
     date: document.getElementById('date').value,
-    lbs: document.getElementById('lbs').value
+    lbs: document.getElementById('lbs').value,
+    addExerciseButton: document.getElementById('addExerciseButton').value
   }
   /*
   var name = document.getElementById('name').value;
