@@ -55,7 +55,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       var headRow = document.createElement("tr");
       for(let i = 1; i <= 5; i++){
         var newCell = document.createElement("th");
-        newCell.id = "headerCell" + i
+        newCell.id = "headerCell" + i;
         newCell.style.border = "solid";
         newCell.style.borderWidth = "1px";
         newCell.style.textAlign = "center";
