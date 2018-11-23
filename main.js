@@ -42,11 +42,10 @@ app.get('/', function(req, res, next){
       return;
     }
     
-  JSON.stringify(rows);
-  
-  res.send(JSON.stringify(rows));
     
-  res.render('home');
+    res.render('home');
+    res.send(JSON.stringify(rows));
+    
   });
   
 });
