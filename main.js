@@ -58,26 +58,41 @@ app.post('/', function(req,res,next){
   
   if(req.body.addExerciseButton){   // We came in from the add exercise form so need to add a row to the database table
     mysql.pool.query('INSERT INTO workouts (name, reps, weight, date, lbs) VALUES (?,?,?,?,?)', [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
-      if(err){
-        next(err);
-        return;
-      }
-      
+        if (err) {
+            next(err);
+            return;
+        }
+
+        else {
+            mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
+                if (err) {
+                    next(err);
+                    return;
+                }
+
+                else {
+                    context.results = JSON.stringify(rows);
+
+                    res.render('home', context);
+                }
+            });
+        }
     });  
   }
   
-  // Get updated table after a change in the table occurs
-  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if (err){
-      next(err);
-      return;
-    }
+  else{
+    // Get updated table after a change in the table occurs
+    mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+      if (err){
+        next(err);
+        return;
+      }
     
-  context.results = JSON.stringify(rows);
+    context.results = JSON.stringify(rows);
   
-  res.render('home',context);
-  });
-  
+    res.render('home',context);
+    });
+  } 
 });
 
 app.use(function(req,res){
