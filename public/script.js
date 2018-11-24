@@ -124,7 +124,7 @@ function displayTable(newData){
         deleteForm.method="post"                                    // Need to specify the form's action on next line
         var hiddenDeleteId = document.createElement("input");
         hiddenDeleteId.type="hidden";
-        hiddenDeleteId.value="newData[index].id";   // Store the id within the form
+        hiddenDeleteId.value = newData[index].id;   // Store the id within the form
         deleteForm.appendChild(hiddenDeleteId);
         
         // Form submits only the id of the row to the given page
