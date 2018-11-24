@@ -137,7 +137,7 @@ function displayTable(newData){
         deleteButton.type="submit";                             
         deleteButton.name="deleteButton";
         deleteButton.value="Delete";
-        deleteButton.class="deleteButton";
+        deleteButton.className="deleteButton";
         deleteForm.appendChild(deleteButton);
         deleteContainer.appendChild(deleteForm);
         newRow.appendChild(deleteContainer);
