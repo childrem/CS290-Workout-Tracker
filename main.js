@@ -36,17 +36,23 @@ app.get('/', function(req, res, next){
   
   console.log("GET Request Received By Server!");
   
-  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if (err){
-      next(err);
-      return;
-    }
+  if(req.query.generateTable){  // This will handle get request sent from client side after page first rendered
+  
+    mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+      if (err){
+        next(err);
+        return;
+      }
     
+      res.send(JSON.stringify(rows));
     
+    });
+    
+  }
+  
+  else{
     res.render('home');
-    //res.send(JSON.stringify(rows));
-    
-  });
+  }
   
 });
 
