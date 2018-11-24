@@ -123,10 +123,11 @@ function displayTable(newData){
         var deleteForm = document.createElement("form");
         deleteForm.method="post";                                   // Need to specify the form's action on next line
         deleteForm.action="";
-        deleteForm.id="deleteForm";
+        //deleteForm.id="deleteForm";
+        //deleteForm.className="deleteForm";
         var hiddenDeleteId = document.createElement("input");
         hiddenDeleteId.type="hidden";
-        hiddenDeleteId.id="rowId";                  // Used to determine which row will be deleted
+        hiddenDeleteId.className="hiddenId";                  // Used to determine which row will be deleted
         hiddenDeleteId.name="id";
         hiddenDeleteId.value = newData[index].id;   // Store the id within the form
         deleteForm.appendChild(hiddenDeleteId);
@@ -344,4 +345,12 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
 });
 
 
-var deleteButtonList = document.getElementsByClassName("deleteButton");
+var deleteButtonList = document.getElementsByClassName("deleteButton"); // List of all form submit buttons that will send id to server
+var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
+
+for (var index = 0; index < deleteButtonList.length; index++){
+  deleteButton[index].addEventListener("click", function(event){
+    console.log("Event worked for delete button!");
+    event.preventDefault();
+  });
+}
