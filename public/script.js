@@ -134,6 +134,7 @@ function displayTable(newData){
         deleteButton.value="Delete";
         deleteForm.appendChild(deleteButton);
         deleteContainer.appendChild(deleteForm);
+        newRow.appendChild(deleteContainer);
         
         
         /*
