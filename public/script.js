@@ -121,6 +121,7 @@ function displayTable(newData){
         
         var deleteContainer = document.createElement("td");
         var deleteForm = document.createElement("form");
+        deleteForm.method="post"                                    // Need to specify the form's action on next line
         var hiddenDeleteId = document.createElement("input");
         hiddenDeleteId.type="hidden";
         hiddenDeleteId.value="newData[index].id";   // Store the id within the form
@@ -129,7 +130,7 @@ function displayTable(newData){
         // Form submits only the id of the row to the given page
         
         var deleteButton = document.createElement("input");
-        deleteButton.type="submit";                               // Need to specify submit target in next line
+        deleteButton.type="submit";                             
         deleteButton.name="deleteButton";
         deleteButton.value="Delete";
         deleteForm.appendChild(deleteButton);
