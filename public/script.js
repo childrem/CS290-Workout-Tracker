@@ -121,7 +121,8 @@ function displayTable(newData){
         
         var deleteContainer = document.createElement("td");
         var deleteForm = document.createElement("form");
-        deleteForm.method="post"                                    // Need to specify the form's action on next line
+        deleteForm.method="post";                                   // Need to specify the form's action on next line
+        deleteForm.action="flip2.engr.oregonstate.edu:5840/";
         var hiddenDeleteId = document.createElement("input");
         hiddenDeleteId.type="hidden";
         hiddenDeleteId.value = newData[index].id;   // Store the id within the form
