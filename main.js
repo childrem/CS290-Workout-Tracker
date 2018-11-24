@@ -89,6 +89,10 @@ app.post('/', function(req,res,next){
     });
   }
   
+  else if(req.body.deleteButton){     // We're coming in from the delete button so need to remove a row
+    
+  }
+  
  /*
     // Get updated table after a change in the table occurs
     mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
