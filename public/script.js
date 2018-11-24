@@ -126,6 +126,7 @@ function displayTable(newData){
         deleteForm.id="deleteForm";
         var hiddenDeleteId = document.createElement("input");
         hiddenDeleteId.type="hidden";
+        hiddenDeleteId.id="rowId";                  // Used to determine which row will be deleted
         hiddenDeleteId.name="id";
         hiddenDeleteId.value = newData[index].id;   // Store the id within the form
         deleteForm.appendChild(hiddenDeleteId);
@@ -136,6 +137,7 @@ function displayTable(newData){
         deleteButton.type="submit";                             
         deleteButton.name="deleteButton";
         deleteButton.value="Delete";
+        deleteButton.class="deleteButton";
         deleteForm.appendChild(deleteButton);
         deleteContainer.appendChild(deleteForm);
         newRow.appendChild(deleteContainer);
@@ -340,3 +342,6 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   
   event.preventDefault();
 });
+
+
+var deleteButtonList = document.getElementsByClassName("deleteButton");
