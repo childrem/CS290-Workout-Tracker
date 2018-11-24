@@ -1,5 +1,9 @@
 console.log("In Javascript File");
 
+function deleteRow(id){
+  console.log("Row with id# " + id + " will be deleted");
+}
+
 function displayTable(newData){
   if(document.getElementById("dataTable")){
         document.getElementById("tableToBeConstructed").removeChild(document.getElementById("dataTable"));
@@ -112,6 +116,12 @@ function displayTable(newData){
         lbsCell.style.borderWidth = "1px";
         lbsCell.style.textAlign = "center";
         newRow.appendChild(lbsCell);
+        
+        var deleteCell = document.createElement("td");
+        var deleteButton = document.createElement("button");
+        deleteButton.onclick="deleteRow(newData[index].id)";    // Store the row's id within the delete button
+        deleteCell.appendChild(deleteButton);
+        newRow.appendChild(deleteCell);
         
         newTable.appendChild(newRow);
       }
