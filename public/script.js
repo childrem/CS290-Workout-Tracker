@@ -117,6 +117,25 @@ function displayTable(newData){
         lbsCell.style.textAlign = "center";
         newRow.appendChild(lbsCell);
         
+        // Store the id for the row in a hidden input
+        
+        var deleteContainer = document.createElement("td");
+        var deleteForm = document.createElement("form");
+        var hiddenDeleteId = document.createElement("input");
+        hiddenDeleteId.type="hidden";
+        hiddenDeleteId.value="newData[index].id";   // Store the id within the form
+        deleteForm.appendChild(hiddenDeleteId);
+        
+        // Form submits only the id of the row to the given page
+        
+        var deleteButton = document.createElement("input");
+        deleteButton.type="submit";                               // Need to specify submit target in next line
+        deleteButton.name="deleteButton";
+        deleteButton.value="Delete";
+        deleteForm.appendChild(deleteButton);
+        deleteContainer.appendChild(deleteForm);
+        
+        
         /*
         var deleteCell = document.createElement("td");
         var deleteButton = document.createElement("button");
