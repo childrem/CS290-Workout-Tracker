@@ -121,7 +121,7 @@ function displayTable(newData){
 
 document.addEventListener("DOMContentLoaded",function(){
   var req = new XMLHttpRequest();
-  req.open("GET", "http://flip2.engr.oregonstate.edu:5840/", true);
+  req.open("GET", "http://flip2.engr.oregonstate.edu:5840/?generateTable=1", true);
   req.addEventListener("load", function(){
     if (req.status >= 200 && req.status < 400) {
       console.log("GET Request Worked");
