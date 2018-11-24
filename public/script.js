@@ -122,6 +122,8 @@ function displayTable(newData){
         deleteButton.onclick="deleteRow(newData[index].id)";    // Store the row's id within the delete button
         deleteButton.name="deleteButton";
         deleteButton.value="Delete";
+        deleteButton.width="10";
+        deleteButton.height="10";
         deleteCell.appendChild(deleteButton);
         newRow.appendChild(deleteCell);
         
