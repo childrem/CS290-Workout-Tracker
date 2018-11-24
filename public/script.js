@@ -120,6 +120,8 @@ function displayTable(newData){
         var deleteCell = document.createElement("td");
         var deleteButton = document.createElement("button");
         deleteButton.onclick="deleteRow(newData[index].id)";    // Store the row's id within the delete button
+        deleteButton.name="deleteButton";
+        deleteButton.value="Delete";
         deleteCell.appendChild(deleteButton);
         newRow.appendChild(deleteCell);
         
