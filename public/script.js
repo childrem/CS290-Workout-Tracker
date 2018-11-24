@@ -117,6 +117,7 @@ function displayTable(newData){
         lbsCell.style.textAlign = "center";
         newRow.appendChild(lbsCell);
         
+        /*
         var deleteCell = document.createElement("td");
         var deleteButton = document.createElement("button");
         deleteButton.onclick="deleteRow(newData[index].id)";    // Store the row's id within the delete button
@@ -126,6 +127,8 @@ function displayTable(newData){
         deleteButton.height="10";
         deleteCell.appendChild(deleteButton);
         newRow.appendChild(deleteCell);
+        
+        */
         
         newTable.appendChild(newRow);
       }
