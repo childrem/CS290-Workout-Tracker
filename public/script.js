@@ -222,10 +222,11 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       console.log("POST Request Worked");
       console.log(req.responseText);
       
-      //document.getElementById("tableToBeConstructed").removeChild(newTable);
       
       var newData = JSON.parse(req.responseText);
+      displayTable(newData);
       
+      /*
       // Get rid of previous table if present
       
       if(document.getElementById("dataTable")){
@@ -276,30 +277,9 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       lbsHeader.style.textAlign = "center";
       headRow.appendChild(lbsHeader);
       
-      /*
-      for(let i = 1; i <= 5; i++){
-        var newCell = document.createElement("th");
-        newCell.id = "headerCell" + i;
-        newCell.style.border = "solid";
-        newCell.style.borderWidth = "1px";
-        newCell.style.textAlign = "center";
-        headRow.appendChild(newCell);
-      }
-      */
       
       newTable.appendChild(headRow);
       
-      /*
-      //document.getElementById("tableToBeConstructed").appendChild(newTable);
-      
-      // Set text content of the header row
-      
-      document.getElementById("headerCell1").textContent = "Exercise Name";
-      document.getElementById("headerCell2").textContent = "Number of Reps";
-      document.getElementById("headerCell3").textContent = "Weight Used";
-      document.getElementById("headerCell4").textContent = "Date Performed";
-      document.getElementById("headerCell5").textContent = "Lbs";
-      */
       
       // Now populate the table with the results returned from the database
       for(var index = 0; index < newData.length; index++){
@@ -344,14 +324,6 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       }
       
       document.getElementById("tableToBeConstructed").appendChild(newTable);
-      
-      /*
-      // Set text content of header row
-      document.getElementById("headerCell1").textContent = "Exercise Name";
-      document.getElementById("headerCell2").textContent = "Number of Reps";
-      document.getElementById("headerCell3").textContent = "Weight Used";
-      document.getElementById("headerCell4").textContent = "Date Performed";
-      document.getElementById("headerCell5").textContent = "Lbs";
       */
       
     }
