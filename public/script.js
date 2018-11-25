@@ -207,7 +207,7 @@ function bindDeleteButtons(){
   //console.log(listOfIds);
   
   for (var index = 0; index < deleteButtonList.length; index++){
-    function() {
+    function closureWrapper() {
       deleteButtonList[index].addEventListener("click", function(event){
       
         var req = new XMLHttpRequest();
