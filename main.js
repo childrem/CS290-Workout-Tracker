@@ -113,6 +113,24 @@ app.post('/', function(req,res,next){
     });
   }
   
+  else if(req.body.updateButton) {      // User entered from the edit button. need to alter current page to show update form
+    
+    // Select all info in the row user wants to update
+    mysql.pool.query('SELECT * FROM workouts WHERE id = ?', [req.body.id], function(err, rows, fields) {
+      if (err) {
+        next(err);
+        return;
+      }
+      
+      else {
+        context.updateForm = true;
+        res.render('home', context);
+      }
+      
+    });
+    
+  }
+  
  /*
     // Get updated table after a change in the table occurs
     mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
