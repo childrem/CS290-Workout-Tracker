@@ -210,8 +210,16 @@ function bindDeleteButtons(){
   console.log("Bind delete buttons was started");
   var deleteButtonList = document.getElementsByClassName("deleteButton"); // List of all form submit buttons that will send id to server
   var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
-  console.log(hiddenIdList)
+  console.log(hiddenIdList);
+  
+  var listOfIds = [];
+  
+  for(var i = 0; i < hiddenIdList.length; i++) {
+    listOfIds[i] = hiddenIdList[i].value;
+  }
 
+  console.log(listOfIds);
+  
   for (var index = 0; index < deleteButtonList.length; index++){
       deleteButtonList[index].addEventListener("click", function(event){
       //console.log("Event worked for delete button with id# " + hiddenIdList[index].value);
