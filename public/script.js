@@ -232,6 +232,7 @@ function bindDeleteButtons(){
         
         req.send(JSON.stringify(dataToSend));
         event.preventDefault();
-    });
-  }(index);
-};
+      });
+    }(index);
+  };
+}
