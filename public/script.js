@@ -215,6 +215,6 @@ function bindDeleteButtons(){
       deleteButtonList[index].addEventListener("click", function(id, event){
       console.log("Event worked for delete button!");
       event.preventDefault();
-    })(index);
+    }(index));
   }
 };
