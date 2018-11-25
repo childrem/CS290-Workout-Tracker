@@ -216,6 +216,7 @@ function bindDeleteButtons(){
         req.setRequestHeader('Content-Type', 'application/json');
         
         dataToSend.id = hiddenIdList[index].value;
+        dataToSend.deleteButton = "Delete";
         
         //console.log(hiddenIdList);
         console.log(index);
