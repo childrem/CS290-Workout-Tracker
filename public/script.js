@@ -190,40 +190,27 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   event.preventDefault();
 });
 
-/*
 
-var deleteButtonList = document.getElementsByClassName("deleteButton"); // List of all form submit buttons that will send id to server
-var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
-
-for (var index = 0; index < deleteButtonList.length; index++){
-  deleteButtonList[index].addEventListener("click", function(event){
-    console.log("Event worked for delete button!");
-    event.preventDefault();
-  });
-}
-
-*/
-
-//document.addEventListener("DOMContentLoaded", bindDeleteButtons);
 
 function bindDeleteButtons(){
   console.log("Bind delete buttons was started");
   var deleteButtonList = document.getElementsByClassName("deleteButton"); // List of all form submit buttons that will send id to server
   var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
-  console.log(hiddenIdList);
+  //console.log(hiddenIdList);
   
-  var listOfIds = [];   // will contain the list of Ids that go with each delete button on the table
+  //var listOfIds = [];   // will contain the list of Ids that go with each delete button on the table
   
-  for(var i = 0; i < hiddenIdList.length; i++) {
-    listOfIds[i] = hiddenIdList[i].value;
-  }
+  //for(var i = 0; i < hiddenIdList.length; i++) {
+    //listOfIds[i] = hiddenIdList[i].value;
+  //}
 
-  console.log(listOfIds);
+  //console.log(listOfIds);
   
   for (var index = 0; index < deleteButtonList.length; index++){
-      deleteButtonList[index].addEventListener("click", function(event, index){
-      console.log("Event worked for delete button with id# " + hiddenIdList[index]);
-      event.preventDefault();
-    }(index));
+      deleteButtonList[index].addEventListener("click", function(event){
+      
+        console.log("Delete Event was added correctly!");
+        event.preventDefault();
+    });
   }
 };
