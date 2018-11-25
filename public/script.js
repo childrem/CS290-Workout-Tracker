@@ -212,9 +212,9 @@ function bindDeleteButtons(){
   var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
 
   for (var index = 0; index < deleteButtonList.length; index++){
-      deleteButtonList[index].addEventListener("click", function(id, event){
+      deleteButtonList[index].addEventListener("click", function(event){
       console.log("Event worked for delete button!");
       event.preventDefault();
-    }(index));
+    });
   }
 };
