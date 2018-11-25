@@ -207,7 +207,8 @@ function bindDeleteButtons(){
   //console.log(listOfIds);
   
   for (var index = 0; index < deleteButtonList.length; index++){
-      deleteButtonList[index].addEventListener("click", function(event){
+    function closureWrapper(i) {
+      deleteButtonList[i].addEventListener("click", function(event){
       
         var req = new XMLHttpRequest();
         var dataToSend = {};
@@ -227,10 +228,10 @@ function bindDeleteButtons(){
           else {
             console.log("Error in network request: " + req.statusText);
           }
-        })();
+        });
         
         req.send(JSON.stringify(dataToSend));
         event.preventDefault();
     });
-  }
+  }(index);
 };
