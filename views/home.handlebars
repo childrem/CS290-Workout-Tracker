@@ -5,23 +5,34 @@
   <h3>Update Exercise:</h3>
   <fieldset>
   <form id="addExercise" action="" method="get">
+    <input type="hidden" name="id" value={{id}}>
     Exercise name:
-    <input type="text" name="name" id="name">
+    <input type="text" name="name" id="name" value={{name}}>
     <br>
     Number of reps:
-    <input type="number" name="reps" id="reps">
+    <input type="number" name="reps" id="reps" value={{reps}}>
     <br>
     Weight of weights used:
-    <input type="number" name="weight" id="weight">
+    <input type="number" name="weight" id="weight" value={{weight}}>
     <br>
     Date performed:
-    <input type="date" name="date" id="date">
+    <input type="date" name="date" id="date" value={{date}}>
     <br>
     Unit of measure for weight:
+    {{#if lbsUsed}}
     <select name="lbs" id="lbs">
       <option value="1">lbs</option>
       <option value="0">kg</option>
     </select>
+    
+    {{else}}
+    <select name="lbs" id="lbs">
+      <option value="0">kg</option>
+      <option value="1">lbs</option>
+    </select>
+    
+    {{/if}}
+    
     <br>
     <input type="submit" name="updateExerciseButton" value="Update Exercise" id="updateExerciseButton">
   </form>
