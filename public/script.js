@@ -223,7 +223,8 @@ function bindDeleteButtons(){
         
         req.addEventListener('load', function(){
           if(req.status >= 200 && req.status < 400){
-            console.log("POST response received successfully!");
+            var newData = JSON.parse(req.responseText);
+            displayTable(newData);
           }
           
           else {
