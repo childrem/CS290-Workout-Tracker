@@ -121,6 +121,26 @@ function displayTable(newData){
         deleteForm.appendChild(deleteButton);
         deleteContainer.appendChild(deleteForm);
         newRow.appendChild(deleteContainer);
+        
+        var updateContainer = document.createElement("td");     // Code to create an edit button that submits row id to server
+        var updateForm = document.createElement("form");
+        updateForm.method = "post";
+        updateForm.action = "";
+        var hiddenUpdateId = document.createElement("input");
+        hiddenUpdateId.type = "hidden";
+        hiddenUpdateId.className = "updateId";
+        hiddenUpdateId.name = "id";
+        hiddenUpdateId.value = newData[index].id;     // Store the row id within the form
+        updateForm.appendChild(hiddenUpdateId);
+        
+        var updateButton = document.createElement("input");
+        updateButton.type = "submit";
+        updateButton.name = "updateButton";
+        updateButton.value = "Edit";
+        updateButton.className = "updateButton";
+        updateForm.appendChild(updateButton);
+        updateContainer.appendChild(updateForm);
+        newRow.appendChild(updateContainer);
                 
         
         newTable.appendChild(newRow);
