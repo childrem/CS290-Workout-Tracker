@@ -207,7 +207,7 @@ function bindDeleteButtons(){
   //console.log(listOfIds);
   
   for (var index = 0; index < deleteButtonList.length; index++){
-    function closureWrapper() {
+    function closureWrapper(index) {
       deleteButtonList[index].addEventListener("click", function(event){
       
         var req = new XMLHttpRequest();
@@ -233,6 +233,6 @@ function bindDeleteButtons(){
         req.send(JSON.stringify(dataToSend));
         event.preventDefault();
       });
-    }closureWrapper();    // wrapper function called here to create closure
+    }closureWrapper(index);    // wrapper function called here to create closure
   };
 }
