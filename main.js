@@ -124,6 +124,16 @@ app.post('/', function(req,res,next){
       
       else {
         context.updateForm = true;
+        context.id = rows[0].id;
+        context.name = rows[0].name;
+        context.reps = rows[0].reps;
+        context.weight = rows[0].weight;
+        context.date = rows[0].date;
+        
+        if(rows[0].lbs == 1) {
+          context.lbsUsed = true;
+        }
+        
         res.render('home', context);
       }
       
