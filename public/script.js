@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded",function(){
       console.log("GET Request Worked");
       var dataTable = JSON.parse(req.responseText);
       displayTable(dataTable);
+      bindDeleteButtons();
     }
     
     else {
@@ -203,7 +204,7 @@ for (var index = 0; index < deleteButtonList.length; index++){
 
 */
 
-document.addEventListener("DOMContentLoaded", bindDeleteButtons);
+//document.addEventListener("DOMContentLoaded", bindDeleteButtons);
 
 function bindDeleteButtons(){
   console.log("Bind delete buttons was started");
