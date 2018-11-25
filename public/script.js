@@ -213,7 +213,7 @@ function bindDeleteButtons(){
 
   for (var index = 0; index < deleteButtonList.length; index++){
       deleteButtonList[index].addEventListener("click", function(event){
-      console.log("Event worked for delete button with id# " + hiddenIdList[index].id);
+      console.log("Event worked for delete button with id# " + hiddenIdList[index].value);
       event.preventDefault();
     });
   }
