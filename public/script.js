@@ -176,7 +176,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       
       var newData = JSON.parse(req.responseText);
       displayTable(newData);
-      
+      bindDeleteButtons();
       
     }
     
