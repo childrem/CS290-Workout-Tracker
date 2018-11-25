@@ -90,7 +90,27 @@ app.post('/', function(req,res,next){
   }
     
   else if(req.body.deleteButton){     // We're coming in from the delete button so need to remove a row
-    console.log("You came from the delete button");
+    mysql.pool.query('DELETE FROM workouts WHERE id = ?', [req.body.id], function(err, result) {
+      if (err) {
+        next(err);
+        return;
+      }
+      
+      else {
+        mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
+          if (err) {
+            next(err);
+            return;
+          }
+          
+          else {
+            res.send(JSON.stringify(rows));
+          }
+          
+        });
+      }
+      
+    });
   }
   
  /*
