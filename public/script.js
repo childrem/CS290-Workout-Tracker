@@ -225,6 +225,7 @@ function bindDeleteButtons(){
           if(req.status >= 200 && req.status < 400){
             var newData = JSON.parse(req.responseText);
             displayTable(newData);
+            bindDeleteButtons();
           }
           
           else {
