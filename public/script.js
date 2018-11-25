@@ -227,10 +227,10 @@ function bindDeleteButtons(){
           else {
             console.log("Error in network request: " + req.statusText);
           }
-        }());
+        });
         
         req.send(JSON.stringify(dataToSend));
         event.preventDefault();
-    });
+    }());
   }
 };
