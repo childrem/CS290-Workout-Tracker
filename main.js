@@ -123,6 +123,7 @@ app.post('/', function(req,res,next){
       }
       
       else {
+        console.log(rows[0]);
         context.updateForm = true;
         context.id = rows[0].id;
         context.name = rows[0].name;
