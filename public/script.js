@@ -213,15 +213,19 @@ function bindDeleteButtons(){
         var dataToSend = {};
         req.open("POST", "http://flip2.engr.oregonstate.edu:5840/", true);
         req.setRequestHeader('Content-Type', 'application/json');
+        
+        dataToSend.id = hiddenIdList[index].value;
+        
         req.addEventListener('load', function(){
           if(req.status >= 200 && req.status < 400){
-            console.log("POST request sent successfully!");
+            console.log("POST response received successfully!");
           }
           
           else {
             console.log("Error in network request: " + req.statusText);
           }
         });
+        
         req.send(JSON.stringify(dataToSend));
         event.preventDefault();
     });
