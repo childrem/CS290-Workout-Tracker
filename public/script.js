@@ -212,7 +212,7 @@ function bindDeleteButtons(){
   var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
   console.log(hiddenIdList);
   
-  var listOfIds = [];
+  var listOfIds = [];   // will contain the list of Ids that go with each delete button on the table
   
   for(var i = 0; i < hiddenIdList.length; i++) {
     listOfIds[i] = hiddenIdList[i].value;
@@ -222,7 +222,7 @@ function bindDeleteButtons(){
   
   for (var index = 0; index < deleteButtonList.length; index++){
       deleteButtonList[index].addEventListener("click", function(event){
-      //console.log("Event worked for delete button with id# " + hiddenIdList[index].value);
+      console.log("Event worked for delete button with id# " + hiddenIdList[index]);
       event.preventDefault();
     });
   }
