@@ -206,6 +206,7 @@ for (var index = 0; index < deleteButtonList.length; index++){
 document.addEventListener("DOMContentLoaded", bindDeleteButtons);
 
 function bindDeleteButtons(){
+  console.log("Bind delete buttons was started");
   var deleteButtonList = document.getElementsByClassName("deleteButton"); // List of all form submit buttons that will send id to server
   var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
 
