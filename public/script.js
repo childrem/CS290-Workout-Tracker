@@ -233,6 +233,6 @@ function bindDeleteButtons(){
         req.send(JSON.stringify(dataToSend));
         event.preventDefault();
       });
-    }();    // wrapper function called here to create closure
+    }closureWrapper();    // wrapper function called here to create closure
   };
 }
