@@ -209,7 +209,20 @@ function bindDeleteButtons(){
   for (var index = 0; index < deleteButtonList.length; index++){
       deleteButtonList[index].addEventListener("click", function(event){
       
-        console.log("Delete Event was added correctly!");
+        var req = new XMLHttpRequest();
+        var dataToSend = {};
+        req.open("POST", "http://flip2.engr.oregonstate.edu:5840/", true);
+        req.setRequestHeader('Content-Type', 'application/json');
+        req.addEventListener('load', function(){
+          if(req.status >= 200 && req.status < 400){
+            console.log("POST request sent successfully!");
+          }
+          
+          else {
+            console.log("Error in network request: " + req.statusText);
+          }
+        });
+        req.send(JSON.stringify(dataToSend));
         event.preventDefault();
     });
   }
