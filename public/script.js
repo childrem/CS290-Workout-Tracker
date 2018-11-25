@@ -214,7 +214,10 @@ function bindDeleteButtons(){
         req.open("POST", "http://flip2.engr.oregonstate.edu:5840/", true);
         req.setRequestHeader('Content-Type', 'application/json');
         
-        dataToSend.id = hiddenIdList[index].value;
+        //dataToSend.id = hiddenIdList[index].value;
+        
+        console.log(hiddenIdList);
+        console.log(index);
         
         req.addEventListener('load', function(){
           if(req.status >= 200 && req.status < 400){
