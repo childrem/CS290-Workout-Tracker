@@ -123,10 +123,11 @@ app.post('/', function(req,res,next){
       }
       
       else {
-        console.log(rows[0]);
+        //console.log(rows[0]);
         context.updateForm = true;
         context.id = rows[0].id;
-        context.name = rows[0].name;
+        var nameToSend = rows[0].name;
+        context.name = nameToSend;
         context.reps = rows[0].reps;
         context.weight = rows[0].weight;
         context.date = rows[0].date;
