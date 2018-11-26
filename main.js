@@ -142,6 +142,21 @@ app.post('/', function(req,res,next){
     
   }
   
+  else if(req.body.updateExerciseButton) {      // user has submitted the update exercise form
+    mysql.pool.query('UPDATE workouts SET name = ?, reps = ?, weight = ?, date = ?, lbs = ? WHERE id = ?', [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.id], function(err, result) {
+      if(err) {
+       next(err);
+       return;
+      }
+      
+      else {
+        res.render('home');
+        
+      }
+      
+    });
+  }
+  
  /*
     // Get updated table after a change in the table occurs
     mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
