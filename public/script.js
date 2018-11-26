@@ -210,6 +210,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   event.preventDefault();
 });
 
+/*
 
 document.getElementById("updateExerciseButton").addEventListener("click", function(event) {
   console.log("Update Button Clicked!");
@@ -218,7 +219,7 @@ document.getElementById("updateExerciseButton").addEventListener("click", functi
   
 });
 
-
+*/
 
 function bindDeleteButtons(){
   console.log("Bind delete buttons was started");
