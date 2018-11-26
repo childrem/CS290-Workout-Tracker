@@ -211,7 +211,7 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
 });
 
 
-document.getElementById("").addEventListener("click", function(event) {
+document.getElementById("updateExerciseButton").addEventListener("click", function(event) {
   console.log("Update Button Clicked!");
   
   event.preventDefault();
