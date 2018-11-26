@@ -126,9 +126,7 @@ app.post('/', function(req,res,next){
         //console.log(rows[0]);
         context.updateForm = true;
         context.id = rows[0].id;
-        var nameToSend = rows[0].name;
-        console.log(nameToSend);
-        context.name = nameToSend;
+        context.name = rows[0].name;
         context.reps = rows[0].reps;
         context.weight = rows[0].weight;
         context.date = rows[0].date;
