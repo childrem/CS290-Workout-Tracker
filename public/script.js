@@ -47,7 +47,7 @@ function displayTable(newData){
       headRow.appendChild(dateHeader);
       
       var lbsHeader = document.createElement("th");
-      lbsHeader.textContent = "Lbs";
+      lbsHeader.textContent = "Unit";
       lbsHeader.style.border = "solid";
       lbsHeader.style.borderWidth = "1px";
       lbsHeader.style.textAlign = "center";
