@@ -1,3 +1,6 @@
+// Michael Childress
+// Database Interactions and UI
+
 var express = require('express');
 
 var app = express();
