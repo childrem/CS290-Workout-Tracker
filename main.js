@@ -41,13 +41,12 @@ app.get('/', function(req, res, next){
   
   if(req.query.generateTable){  // This will handle get request sent from client side after page first rendered
   
-    mysql.pool.query('SELECT name, reps, weight, date_format(date,"%m-%d-%Y") AS date, lbs FROM workouts', function(err, rows, fields){
+    mysql.pool.query('SELECT id, name, reps, weight, date_format(date,"%m-%d-%Y") AS date, lbs FROM workouts', function(err, rows, fields){
       if (err){
         next(err);
         return;
       }
       
-      console.log(rows);
       res.send(JSON.stringify(rows));
     
     });
@@ -75,7 +74,7 @@ app.post('/', function(req,res,next){
         }
       
         else {
-            mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
+            mysql.pool.query('SELECT id, name, reps, weight, date_format(date,"%m-%d-%Y") AS date, lbs FROM workouts', function (err, rows, fields) {
                 if (err) {
                     next(err);
                     return;
@@ -98,7 +97,7 @@ app.post('/', function(req,res,next){
       }
       
       else {
-        mysql.pool.query('SELECT * FROM workouts', function (err, rows, fields) {
+        mysql.pool.query('SELECT id, name, reps, weight, date_format(date,"%m-%d-%Y") AS date, lbs FROM workouts', function (err, rows, fields) {
           if (err) {
             next(err);
             return;
@@ -117,7 +116,7 @@ app.post('/', function(req,res,next){
   else if(req.body.updateButton) {      // User entered from the edit button. need to alter current page to show update form
     
     // Select all info in the row user wants to update
-    mysql.pool.query('SELECT * FROM workouts WHERE id = ?', [req.body.id], function(err, rows, fields) {
+    mysql.pool.query('SELECT id, name, reps, weight, date_format(date,"%m-%d-%Y") AS date, lbs FROM workouts WHERE id = ?', [req.body.id], function(err, rows, fields) {
       if (err) {
         next(err);
         return;
