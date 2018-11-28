@@ -67,6 +67,12 @@ app.post('/', function(req,res,next){
   //console.log(req.body);
   
   if(req.body.addExerciseButton){   // We came in from the add exercise form so need to add a row to the database table
+    // if user didn't enter a first name, we don't want to add it to the table
+    if(req.body.name == ""){
+      alert("You need to at least enter an name for the exercise to add something to the table. Try again.");
+      return;
+    }
+    
     mysql.pool.query('INSERT INTO workouts (name, reps, weight, date, lbs) VALUES (?,?,?,?,?)', [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
         if (err) {
             next(err);
