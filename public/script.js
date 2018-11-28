@@ -90,7 +90,14 @@ function displayTable(newData){
         newRow.appendChild(dateCell);
         
         var lbsCell = document.createElement("td");
-        lbsCell.textContent = newData[index].lbs;
+        if(newData[index].lbs == 1) {
+          lbsCell.textContent = "lbs";
+        }
+        
+        else {
+          lbsCell.textContent = "kg";
+        }
+        //lbsCell.textContent = newData[index].lbs;
         lbsCell.style.border = "solid";
         lbsCell.style.borderWidth = "1px";
         lbsCell.style.textAlign = "center";
