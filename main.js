@@ -153,7 +153,7 @@ app.post('/', function(req,res,next){
     // if user deleted the exercise name, this should not be allowed. Display an error message
     
     if(req.body.name == ""){
-      context.results = "Update FAILED: All rows must contain at least an exercise name. Try again!";
+      context.errorResults = "Update FAILED: All rows must contain at least an exercise name. Try again!";
       res.render('home',context);
       return;
     }
