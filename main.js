@@ -134,7 +134,6 @@ app.post('/', function(req,res,next){
           context.lbsUsed = true;
         }
         
-        console.log(context);
         res.render('home', context);
       }
       
