@@ -149,6 +149,15 @@ app.post('/', function(req,res,next){
   }
   
   else if(req.body.updateExerciseButton) {      // user has submitted the update exercise form
+    
+    // if user deleted the exercise name, this should not be allowed. Display an error message
+    
+    if(req.body.name == ""){
+      context.results = "Update FAILED: All rows must contain at least an exercise name. Try again!";
+      res.render('home',context);
+      return;
+    }
+    
     mysql.pool.query('UPDATE workouts SET name = ?, reps = ?, weight = ?, date = ?, lbs = ? WHERE id = ?', [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.id], function(err, result) {
       if(err) {
        next(err);
