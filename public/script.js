@@ -203,8 +203,10 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       
       var newData = JSON.parse(req.responseText);
       
+      // if user forgot to include the name of the exercise an error will occur
+      
       if(newData.badInput){
-        alert("You need to at least input a name of the exercise to add a row to the table. Try again.");
+        alert("You need to input the name of the exercise to add a row to the table. Try again.");
       }
       
       else{
