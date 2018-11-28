@@ -34,7 +34,7 @@ app.get('/reset-table',function(req,res,next){
 app.get('/', function(req, res, next){
   var context = {};
   
-  console.log("GET Request Received By Server!");
+  //console.log("GET Request Received By Server!");
   
   if(req.query.generateTable){  // This will handle get request sent from client side after page first rendered
   
@@ -60,8 +60,8 @@ app.post('/', function(req,res,next){
   var context = {};
   //context.results = "You've sent a POST request";
   
-  console.log("POST Request Received By Server!");
-  console.log(req.body);
+  //console.log("POST Request Received By Server!");
+  //console.log(req.body);
   
   if(req.body.addExerciseButton){   // We came in from the add exercise form so need to add a row to the database table
     mysql.pool.query('INSERT INTO workouts (name, reps, weight, date, lbs) VALUES (?,?,?,?,?)', [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
@@ -79,9 +79,6 @@ app.post('/', function(req,res,next){
 
                 else {
                   res.send(JSON.stringify(rows));
-                  
-                  //context.results = JSON.stringify(rows);
-                  //res.render('home', context);
                 }
             });
         }
@@ -123,7 +120,6 @@ app.post('/', function(req,res,next){
       }
       
       else {
-        //console.log(rows[0]);
         context.updateForm = true;
         context.id = rows[0].id;
         context.name = rows[0].name;
@@ -157,19 +153,6 @@ app.post('/', function(req,res,next){
     });
   }
   
- /*
-    // Get updated table after a change in the table occurs
-    mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-      if (err){
-        next(err);
-        return;
-      }
-    
-    context.results = JSON.stringify(rows);
-  
-    res.render('home',context);
-    });
-    */
    
 });
 
