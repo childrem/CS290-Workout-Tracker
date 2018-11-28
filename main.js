@@ -41,7 +41,7 @@ app.get('/', function(req, res, next){
   
   if(req.query.generateTable){  // This will handle get request sent from client side after page first rendered
   
-    mysql.pool.query('SELECT name, reps, weight, date_format(date,'%m %d %Y'), lbs FROM workouts', function(err, rows, fields){
+    mysql.pool.query('SELECT name, reps, weight, date_format(date,"%m %d %Y"), lbs FROM workouts', function(err, rows, fields){
       if (err){
         next(err);
         return;
