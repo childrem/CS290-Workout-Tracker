@@ -202,8 +202,15 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
       
       
       var newData = JSON.parse(req.responseText);
-      displayTable(newData);
-      bindDeleteButtons();
+      
+      if(newData.badInput){
+        alert("You need to at least input a name of the exercise to add a row to the table. Try again.");
+      }
+      
+      else{
+        displayTable(newData);
+        bindDeleteButtons();
+      }
       
     }
     
