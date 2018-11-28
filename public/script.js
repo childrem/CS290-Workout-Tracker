@@ -1,4 +1,5 @@
-//console.log("In Javascript File");
+// Michael Childress
+// Database Interactions and UI
 
 function deleteRow(id){
   console.log("Row with id# " + id + " will be deleted");
