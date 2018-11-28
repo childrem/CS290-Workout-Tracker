@@ -1,4 +1,4 @@
-console.log("In Javascript File");
+//console.log("In Javascript File");
 
 function deleteRow(id){
   console.log("Row with id# " + id + " will be deleted");
@@ -97,7 +97,7 @@ function displayTable(newData){
         else {
           lbsCell.textContent = "kg";
         }
-        //lbsCell.textContent = newData[index].lbs;
+        
         lbsCell.style.border = "solid";
         lbsCell.style.borderWidth = "1px";
         lbsCell.style.textAlign = "center";
@@ -109,8 +109,7 @@ function displayTable(newData){
         var deleteForm = document.createElement("form");
         deleteForm.method="post";                                   // Need to specify the form's action on next line
         deleteForm.action="";
-        //deleteForm.id="deleteForm";
-        //deleteForm.className="deleteForm";
+  
         var hiddenDeleteId = document.createElement("input");
         hiddenDeleteId.type="hidden";
         hiddenDeleteId.className="hiddenId";                  // Used to determine which row will be deleted
@@ -161,7 +160,7 @@ document.addEventListener("DOMContentLoaded",function(){
   req.open("GET", "http://flip2.engr.oregonstate.edu:5840/?generateTable=1", true);
   req.addEventListener("load", function(){
     if (req.status >= 200 && req.status < 400) {
-      console.log("GET Request Worked");
+      //console.log("GET Request Worked");
       var dataTable = JSON.parse(req.responseText);
       displayTable(dataTable);
       bindDeleteButtons();
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 document.getElementById('addExerciseButton').addEventListener("click", function(event){
-  console.log("POST Event Listener Simple Method Worked!");
+  //console.log("POST Event Listener Simple Method Worked!");
   var req = new XMLHttpRequest();
   // Get all of the user input information
   
@@ -197,8 +196,8 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   req.setRequestHeader('Content-Type', 'application/json');
   req.addEventListener("load", function(){
     if (req.status >= 200 && req.status < 400) {
-      console.log("POST Request Worked");
-      console.log(req.responseText);
+      //console.log("POST Request Worked");
+      //console.log(req.responseText);
       
       
       var newData = JSON.parse(req.responseText);
@@ -217,30 +216,12 @@ document.getElementById('addExerciseButton').addEventListener("click", function(
   event.preventDefault();
 });
 
-/*
-
-document.getElementById("updateExerciseButton").addEventListener("click", function(event) {
-  console.log("Update Button Clicked!");
-  
-  event.preventDefault();
-  
-});
-
-*/
 
 function bindDeleteButtons(){
   console.log("Bind delete buttons was started");
   var deleteButtonList = document.getElementsByClassName("deleteButton"); // List of all form submit buttons that will send id to server
   var hiddenIdList = document.getElementsByClassName("hiddenId");         // List of all hidden inputs that contain id as value
-  //console.log(hiddenIdList);
   
-  //var listOfIds = [];   // will contain the list of Ids that go with each delete button on the table
-  
-  //for(var i = 0; i < hiddenIdList.length; i++) {
-    //listOfIds[i] = hiddenIdList[i].value;
-  //}
-
-  //console.log(listOfIds);
   
   for (var index = 0; index < deleteButtonList.length; index++){
     function closureWrapper(index) {
@@ -254,8 +235,7 @@ function bindDeleteButtons(){
         dataToSend.id = hiddenIdList[index].value;
         dataToSend.deleteButton = "Delete";
         
-        //console.log(hiddenIdList);
-        console.log(index);
+        //console.log(index);
         
         req.addEventListener('load', function(){
           if(req.status >= 200 && req.status < 400){
